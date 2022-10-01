@@ -1,0 +1,44 @@
+*{
+    font-family: Roboto;
+}
+h1{
+    text-align: center;
+}
+.contenedor{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+button{
+    cursor: pointer;
+    padding: 10px 20px;
+    background-color: gray;
+    border: 1px solid darkgray;
+    color: white;
+    align-items: center;
+}
+button:hover{
+    color: darkred;
+    background-color: darkgrey;
+}
+.variables{
+    width: 350px;
+    display: block;
+}
+input{
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 5px;
+}
+
+.operaciones{
+    display: block;
+}
+.resultado{
+    width: 100%;
+    display: block;
+    text-align: center;
+    padding: 10px;
+    font-size: 1.2rem;
+    color: gray;
+}
