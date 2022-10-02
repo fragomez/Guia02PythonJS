@@ -1,34 +1,45 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="normalize.css">
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     <title>Ejercicios de Python en JavaScript - Guía 02</title>
 </head>
+
 <body>
-    <h1>3. Desarrollar un diagrama que lea 3 valores diferentes e indique cual es el mayor de ellos, el menor o si son iguales.</h1>
-        <div class="contenedor">
-            <div class="variables">
-                <form name="" id="guia2">
-                    <input id="numero1" type="number" placeholder="Ingrese el valor del número 1" autofocus required>
-                    <input id="numero2" type="number" placeholder="Ingrese el valor del número 2" required>
-                    <input id="numero3" type="number" placeholder="Ingrese el valor del número 3" required>
-                    <div class="operaciones">
-                        <button id="calcular" type="submit">Calcular</button>
-                        <button id="limpiar" type="reset">Limpiar</button>
-                    </div>
-                    <div class="resultado" id="mayor"></div>
-                    <div class="resultado" id="menor"></div>
-                    <div class="resultado" id="iguales"></div>
-                </form>
-            </div>
+    <h1>4. Cálculo de áreas - Elige una figura geométrica: Triángulo y Círculo</h1>
+    <div class="contenedor">
+        <div class="variables">
+            <select name="select" id="opcion" class="opcion">
+                <option value="--" disabled selected>-- Seleccione una opción --</option>
+                <option value="Triangulo">Triángulo</option>
+                <option value="Circulo">Circulo</option>
+            </select>
+            
+            <form id="frmTriangulo" class="frmTriangulo">
+                <input id="base" type="number" placeholder="Ingrese la base de triángulo" required>
+                <input id="altura" type="number" placeholder="Ingrese la altura del triángulo" required>
+            </form>
+            <form id="frmCirculo" class="frmCirculo">
+                <input id="radio" type="number" placeholder="Ingrese el radio del circulo" required>
+            </form>
+            
+            <form id="area" class="area">
+                <button type="submit" class="calcular">Calcular</button>
+                <div id="resultado" class="resultado"></div>
+            </form>
+        
         </div>
+    </div>
+    </div>
 
     <!-- Cargamos el archivo js dónde se realiza la lógica de negocio-->
     <script src="main.js"></script>
 </body>
+
 </html>

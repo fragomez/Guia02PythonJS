@@ -1,50 +1,46 @@
-function calc(numero1,numero2,numero3){
-    document.querySelector("#mayor").innerHTML="";
-    document.querySelector("#menor").innerHTML="";
-    document.querySelector("#iguales").innerHTML="";
-    if (numero1 > numero2 && numero1 >= numero3){
-        document.querySelector("#mayor").innerHTML = "El número mayor es " + numero1;
-        if(numero2 > numero3){
-            document.querySelector("#menor").innerHTML = "El número menor es " + numero3;
-        } else {
-            document.querySelector("#menor").innerHTML = "El número menor es " + numero2;
-        }
-    } else if (numero2 > numero1 && numero2 >= numero3){
-        document.querySelector("#mayor").innerHTML = "El número mayor es " + numero2;
-        if(numero1 > numero3){
-            document.querySelector("#menor").innerHTML = "El número menor es " + numero1;
-        } else{
-            document.querySelector("#menor").innerHTML = "El número menor es " + numero3;
-        }
-    } else if (numero3 > numero1 && numero3 >= numero2){
-        document.querySelector("#mayor").innerHTML = "El número mayor es " + numero3;
-        if(numero1 > numero2){
-            document.querySelector("#menor").innerHTML = "El número menor es " + numero2;
-        } else {
-            document.querySelector("#menor").innerHTML = "El número menor es " + numero1;
-        }
+function comprobar(seleccionado){
+    if (seleccionado == "Triangulo"){
+        document.querySelector("#frmTriangulo").style.display = 'block';
     } else {
-        document.querySelector("#iguales").innerHTML = "Los números ingresados son iguales";
+        document.querySelector("#frmCirculo").style.display = 'block';
     }
-    
 } 
-addEventListener("DOMContentLoaded", (e)=>{
-    let calcular = document.querySelector("#guia2");
-    calcular.addEventListener("submit", (e)=>{
-        e.preventDefault();
-        let numero1 = document.querySelector("#numero1").value;
-        let numero2 = document.querySelector("#numero2").value;
-        let numero3 = document.querySelector("#numero3").value;
-        calc(numero1,numero2,numero3);
+
+let seleccionado;
+addEventListener("DOMContentLoaded", (e) => {
+    let opcion = document.querySelector("#opcion");
+    opcion.addEventListener("change", (e) => {
+        document.querySelector("#frmTriangulo").style.display = 'none';
+        document.querySelector("#frmCirculo").style.display = 'none';
+        seleccionado = opcion.value;
+        comprobar(seleccionado);
     })
 })
 
+addEventListener("DOMContentLoaded", (e) => {
+    let area = document.querySelector("#area");
+    area.addEventListener("submit", (e) => {
+        e.preventDefault();
+        if(seleccionado == "Triangulo"){
+            let base = document.querySelector("#base").value;
+            let altura = document.querySelector("#altura").value;
+            let area = (base * altura) / 2;
+            document.querySelector("#resultado").innerHTML = area;
+        } else if (seleccionado == "Circulo"){
+            let radio = document.querySelector("#radio").value;
+            let area = Math.PI * radio * radio;
+            document.querySelector("#resultado").innerHTML = area;
+        } else {
+            alert("Debe seleccionar una figura")
+        }
+    })
+})
 
-function limpiar(){
+/*function limpiar(){
     document.querySelector("#guia2").reset();
     document.querySelector("#mayor").innerHTML="";
     document.querySelector("#menor").innerHTML="";
     document.querySelector("#iguales").innerHTML="";
 }
 
-addEventListener('reset', limpiar);
+addEventListener('reset', limpiar);*/

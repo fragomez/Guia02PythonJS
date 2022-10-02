@@ -26,7 +26,7 @@ button:hover{
     display: block;
 }
 input{
-    width: 100%;
+    width: 65%;
     padding: 10px;
     margin-bottom: 5px;
 }
@@ -39,6 +39,18 @@ input{
     display: block;
     text-align: center;
     padding: 10px;
-    font-size: 1.2rem;
+    font-size: 2rem;
     color: gray;
+}
+#frmTriangulo{
+    display: none;
+}
+#frmCirculo{
+    display: none;
+}
+select{
+    display: block;
+    height: 40px;
+    padding: 10px 20px;
+    margin-bottom: 5px;
 }
