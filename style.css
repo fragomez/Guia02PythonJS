@@ -34,7 +34,7 @@ input{
 .operaciones{
     display: block;
 }
-.resultado{
+.resultado, .impares{
     width: 100%;
     display: block;
     text-align: left;
