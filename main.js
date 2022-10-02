@@ -39,17 +39,26 @@ addEventListener("DOMContentLoaded", (e) => {
 */
 
 addEventListener("DOMContentLoaded", (e) => {
-    let calcular = document.querySelector("#guia2");
-    calcular.addEventListener("submit", (e) => {
-        e.preventDefault();
-        let numero1 = document.querySelector("#numero1").value;
-        let numero2 = document.querySelector("#numero2").value;
-        if (numero1 > numero2){
-            let resultado = numero1 - numero2;
-            document.querySelector("#resultado").innerHTML = `Resultado de la resta: ${resultado}`;
-        } else {
-            document.querySelector("#resultado").innerHTML = "La operación no se puede realizar";
-        }
+    let opcion = document.querySelector("#opcion");
+    opcion.addEventListener("change", (e) => {
+        let seleccion = opcion.value;
+        let calcular = document.querySelector("#guia2");
+        calcular.addEventListener("submit", (e) =>{
+            e.preventDefault();
+            let cantidad = document.querySelector("#cantidad").value;
+            const precio = 2000;
+            let total;
+            if(seleccion == "TipoA"){
+                total = ((precio * cantidad) - ((precio * cantidad) * 0.3));
+            } else  if(seleccion == "TipoB"){
+                total = ((precio * cantidad) - ((precio * cantidad) * 0.2));
+            } else if(seleccion == "TipoC"){
+                total = ((precio * cantidad) - ((precio * cantidad) * 0.1));
+            } else {
+                document.querySelector("#resultado").innerHTML = "Seleccione un tipo de membresia";
+            }
+            document.querySelector("#resultado").innerHTML = `Total a pagar: $${total} pesos`;
+        })
     })
 })
 
