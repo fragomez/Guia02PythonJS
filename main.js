@@ -42,17 +42,13 @@ addEventListener("DOMContentLoaded", (e) => {
     let calcular = document.querySelector("#guia2");
     calcular.addEventListener("submit", (e) => {
         e.preventDefault();
-        let producto1 = document.querySelector("#producto1").value;
-        let producto2 = document.querySelector("#producto2").value;
-        let producto3 = document.querySelector("#producto3").value;
-        let producto4 = document.querySelector("#producto4").value;
-        let producto5 = document.querySelector("#producto5").value;
-        let subTotal = parseInt(producto1) + parseInt(producto2) + parseInt(producto3) + parseInt(producto4) + parseInt(producto5);
-        let iva = subTotal * 0.10;
-        let total = subTotal + iva;
-        document.querySelector("#subtotal").innerHTML = `El subtotal es de $ ${subTotal} pesos`;
-        document.querySelector("#iva").innerHTML = `El IVA es de $ ${iva} pesos`;
-        document.querySelector("#resultado").innerHTML = `El total es de $ ${total} pesos`;
+        let nota1 = document.querySelector("#nota1").value;
+        let nota2 = document.querySelector("#nota2").value;
+        let nota3 = document.querySelector("#nota3").value;
+        let nota4 = document.querySelector("#nota4").value;
+        let nota5 = document.querySelector("#nota5").value;
+        let promedio = (parseInt(nota1) + parseInt(nota2) + parseInt(nota3) + parseInt(nota4) + parseInt(nota5)) / 5;
+        document.querySelector("#resultado").innerHTML = `Nota promedio: ${promedio}`;
     })
 })
 
