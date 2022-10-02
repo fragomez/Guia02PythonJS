@@ -12,12 +12,18 @@
 </head>
 
 <body>
-    <h1>7. Calcular todos los pagos hechos de un restaurante y que si el consumo ingresado excede los
-        $130.000 el descuento será del 15%, de lo contrario no hay descuento.</h1>
+    <h1>8. En cierta empresa se les paga a sus trabajadores de la siguiente forma: si el empleado es de planta,
+        la hora trabajada se le paga a $20000, si el empleado es administrativo, la hora trabajada se le paga
+        a $10000. Para calcular su pago es necesario conocer el total de horas trabajadas.</h1>
         <div class="contenedor">
             <div class="variables">
                 <form id="guia2">
-                    <input id="factura" type="number" placeholder="Ingrese el subtotal de la factura" autofocus required>
+                    <select name="select" id="opcion" class="opcion">
+                        <option value="seleccionar" disabled selected> -- Seleccione el tipo de empleado --</option>
+                        <option value="Planta">Planta</option>
+                        <option value="Administrativo">Administrativo</option>
+                    </select>
+                    <input id="horas" type="number" placeholder="Ingrese la cantidad de horas laboradas" required>
                     <div class="operaciones">
                         <button id="calcular" type="submit">Calcular</button>
                         <button id="limpiar" type="reset">Limpiar</button>
