@@ -1,25 +1,20 @@
-function calc(temperatura,presion){
-    let alerta = temperatura * temperatura;
-    return alerta;
+function calc(factura){
+    const desc15 = 0.15;
+    let subtotal = factura * desc15;
+    let total = factura - subtotal;
+    return total;
 } 
 
 addEventListener("DOMContentLoaded", (e) => {
     let calcular = document.querySelector("#guia2");
     calcular.addEventListener("submit", (e) => {
         e.preventDefault();
-        document.querySelector("#alarma").style.display = 'none';
-        document.querySelector("#resultado").innerHTML="";
-        document.querySelector("#alarma").innerHTML="";
-        let temperatura = document.querySelector("#temperatura").value;
-        let presion = document.querySelector("#presion").value;
-        if(temperatura > 100){
-            document.querySelector("#alarma").style.display = 'block';
-            document.querySelector("#alarma").innerHTML="ALARMA: TEMPERATURA MUY ALTA";
-        } else if(presion > 200){
-            document.querySelector("#alarma").style.display = 'block';
-            document.querySelector("#alarma").innerHTML="ALARMA: TEMPERATURA MUY ALTA";
+        let factura = document.querySelector("#factura").value;
+        if(factura > 130000){
+            let total = factura - (factura * 0.15);
+            document.querySelector("#resultado").innerHTML = "TOTAL A PAGAR: $" + total + " pesos (descuento del 15% aplicado)";
         } else {
-            document.querySelector("#resultado").innerHTML = "NORMAL";
+            document.querySelector("#resultado").innerHTML = "TOTAL A PAGAR: $" + factura + " pesos";
         }
     })
 })
@@ -27,7 +22,6 @@ addEventListener("DOMContentLoaded", (e) => {
 function limpiar(){
     document.querySelector("#guia2").reset();
     document.querySelector("#resultado").innerHTML="";
-    document.querySelector("#alarma").style.display = 'none';
 }
 
 addEventListener('reset', limpiar);
