@@ -34,7 +34,7 @@ input{
 .operaciones{
     display: block;
 }
-.resultado, .impares{
+.resultado, .iva, .subtotal{
     width: 100%;
     display: block;
     text-align: left;

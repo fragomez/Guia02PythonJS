@@ -12,21 +12,23 @@
 </head>
 
 <body>
-    <h1>9. Realizar el algoritmo que lea N números, calcule y escriba la suma de los pares y la resta de los
-        impares. Numero par es aquel que su residuo igual a cero (num %2!=0)</h1>
+    <h1>10. Calcular el valor total del valor de 5 productos, el IVA y el subtotal, visualizar los resultados de:
+        Iva, Subtotal y Total de la compra de los artículos.</h1>
         <div class="contenedor">
             <div class="variables">
                 <form id="guia2">
-                    <input id="numero1" type="number" placeholder="Ingrese el primer número" required autofocus>
-                    <input id="numero2" type="number" placeholder="Ingrese el segundo número" required>
-                    <input id="numero3" type="number" placeholder="Ingrese el tercer número" required>
-                    <input id="numero4" type="number" placeholder="Ingrese el cuarto número" required>
+                    <input id="producto1" type="number" placeholder="Ingrese el valor del primer producto" required autofocus>
+                    <input id="producto2" type="number" placeholder="Ingrese el valor del segundo producto" required>
+                    <input id="producto3" type="number" placeholder="Ingrese el valor del tercer producto" required>
+                    <input id="producto4" type="number" placeholder="Ingrese el valor del cuarto producto" required>
+                    <input id="producto5" type="number" placeholder="Ingrese el valor del quinto producto" required>
                     <div class="operaciones">
                         <button id="calcular" type="submit">Calcular</button>
                         <button id="limpiar" type="reset">Limpiar</button>
                     </div>
+                    <div class="subtotal" id="subtotal"></div>
+                    <div class="iva" id="iva"></div>
                     <div class="resultado" id="resultado"></div>
-                    <div class="impares" id="impares"></div>
                 </form>
             </div>
         </div>
