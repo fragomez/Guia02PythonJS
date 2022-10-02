@@ -26,7 +26,7 @@ button:hover{
     display: block;
 }
 input{
-    width: 65%;
+    width: 100%;
     padding: 10px;
     margin-bottom: 5px;
 }
@@ -38,9 +38,18 @@ input{
     width: 100%;
     display: block;
     text-align: left;
-    padding: 10px;
-    font-size: 2rem;
+    padding: 10px 0;
+    font-size: 1.2rem;
     color: gray;
+}
+.alarma{
+    width: 100%;
+    display: none;
+    text-align: left;
+    padding: 10px;
+    font-size: 1.2rem;
+    background-color: red;
+    color: white;
 }
 #frmTriangulo{
     display: none;
