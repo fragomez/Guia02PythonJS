@@ -1,46 +1,29 @@
-function comprobar(seleccionado){
-    if (seleccionado == "Triangulo"){
-        document.querySelector("#frmTriangulo").style.display = 'block';
-    } else {
-        document.querySelector("#frmCirculo").style.display = 'block';
-    }
+function calc(lado1,lado2){
+    let area = lado1 * lado2;
+    return area;
 } 
 
-let seleccionado;
 addEventListener("DOMContentLoaded", (e) => {
-    let opcion = document.querySelector("#opcion");
-    opcion.addEventListener("change", (e) => {
-        document.querySelector("#frmTriangulo").style.display = 'none';
-        document.querySelector("#frmCirculo").style.display = 'none';
-        seleccionado = opcion.value;
-        comprobar(seleccionado);
-    })
-})
-
-addEventListener("DOMContentLoaded", (e) => {
-    let area = document.querySelector("#area");
-    area.addEventListener("submit", (e) => {
+    let calcular = document.querySelector("#guia2");
+    calcular.addEventListener("submit", (e) => {
         e.preventDefault();
-        if(seleccionado == "Triangulo"){
-            let base = document.querySelector("#base").value;
-            let altura = document.querySelector("#altura").value;
-            let area = (base * altura) / 2;
-            document.querySelector("#resultado").innerHTML = area;
-        } else if (seleccionado == "Circulo"){
-            let radio = document.querySelector("#radio").value;
-            let area = Math.PI * radio * radio;
-            document.querySelector("#resultado").innerHTML = area;
+        let lado1 = document.querySelector("#lado1").value;
+        let lado2 = document.querySelector("#lado2").value;
+        if(lado1 < 0 || lado2 < 0){
+            alert("Los lados deben ser positivos");
+            
         } else {
-            alert("Debe seleccionar una figura")
+            let resultado = calc(lado1,lado2)
+            document.querySelector("#resultado").innerHTML = resultado;
         }
     })
 })
 
-/*function limpiar(){
+function limpiar(){
     document.querySelector("#guia2").reset();
     document.querySelector("#mayor").innerHTML="";
     document.querySelector("#menor").innerHTML="";
     document.querySelector("#iguales").innerHTML="";
 }
 
-addEventListener('reset', limpiar);*/
+addEventListener('reset', limpiar);

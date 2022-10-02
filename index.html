@@ -12,31 +12,20 @@
 </head>
 
 <body>
-    <h1>4. Cálculo de áreas - Elige una figura geométrica: Triángulo y Círculo</h1>
-    <div class="contenedor">
-        <div class="variables">
-            <select name="select" id="opcion" class="opcion">
-                <option value="--" disabled selected>-- Seleccione una opción --</option>
-                <option value="Triangulo">Triángulo</option>
-                <option value="Circulo">Circulo</option>
-            </select>
-            
-            <form id="frmTriangulo" class="frmTriangulo">
-                <input id="base" type="number" placeholder="Ingrese la base de triángulo" required>
-                <input id="altura" type="number" placeholder="Ingrese la altura del triángulo" required>
-            </form>
-            <form id="frmCirculo" class="frmCirculo">
-                <input id="radio" type="number" placeholder="Ingrese el radio del circulo" required>
-            </form>
-            
-            <form id="area" class="area">
-                <button type="submit" class="calcular">Calcular</button>
-                <div id="resultado" class="resultado"></div>
-            </form>
-        
+    <h1>5. Escriba un algoritmo que calcule el área de un rectángulo siempre y cuando los lados sean positivos:</h1>
+        <div class="contenedor">
+            <div class="variables">
+                <form id="guia2">
+                    <input id="lado1" type="number" placeholder="Ingrese el valor del lado 1" autofocus required>
+                    <input id="lado2" type="number" placeholder="Ingrese el valor del lado 2" required>
+                    <div class="operaciones">
+                        <button id="calcular" type="submit">Calcular</button>
+                        <button id="limpiar" type="reset">Limpiar</button>
+                    </div>
+                    <div class="resultado" id="resultado"></div>
+                </form>
+            </div>
         </div>
-    </div>
-    </div>
 
     <!-- Cargamos el archivo js dónde se realiza la lógica de negocio-->
     <script src="main.js"></script>
